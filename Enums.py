@@ -1,6 +1,4 @@
 from enum import Enum
-import enum
-
 
 class PaymentMethod(Enum):
     CASH = 1

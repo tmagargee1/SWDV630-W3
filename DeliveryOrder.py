@@ -9,7 +9,7 @@ class DeliveryOrder(Order):
 
     def assignDriver(self):
         #Get next driver available 
-        self.driver = "Person" #Update in future
+        self.driver = "Tim" #Update in future
 
     def getEstimatedTime(self):
         return super().getEstimatedTime() + self.getTimeToAddress()
@@ -17,3 +17,10 @@ class DeliveryOrder(Order):
     def getTimeToAddress(self):
         #Find how long of a drive self.address is from store
         return 10
+
+    def __str__(self):
+        if(self.driver != "None"):
+            driverString = "\n{0} is delivering the order".format(self.driver)
+        else:
+            driverString = ""
+        return super().__str__() + "\nDeliver to {0} {1}".format(self.address, driverString)
